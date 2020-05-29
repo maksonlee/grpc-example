@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package sfisgrpc;
+
+service Sfis {
+    rpc GetItemStations (Imei) returns (StationResponse) {}
+}
+
+message Imei {
+    string name = 1;
+}
+message StationResponse {
+    repeated Station stations = 1;
+}
+
+message Station {
+    string name = 1;
+}
